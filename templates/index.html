@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Book Recommender System</title>
 
-    <!-- Bootstrap CSS -->
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
 
     <style>
@@ -14,10 +14,10 @@
             color: white;
         }
 
-        /* Clean Centered Navbar */
+        
         .navbar {
             background-color: rgb(217, 212, 191);
-            /* border-bottom: 1px solid black; */
+           
             padding: 15px 0;
         }
 
@@ -89,20 +89,20 @@
 </head>
 <body>
 
-<!-- Navbar -->
+
 <nav class="navbar">
     <ul class="navbar-center">
         <li><a href="/">Home</a></li>
         <li><a href="/recommend">Recommend</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="/contact">Contact</a></li>
     </ul>
 </nav>
 
-<!-- Main Container -->
+
 <div class="container">
     <h1 class="section-title">Top 50 Books</h1>
 
-    <!-- Book Cards -->
+   
     <div class="row row-flex">
         {% for i in range(book_name|length) %}
         <div class="col-md-3 col-sm-6">

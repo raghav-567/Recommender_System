@@ -41,7 +41,7 @@
         }
 
         h1.section-title {
-            background-color: rgb(16, 0, 0);
+            background-color: black;
             color: rgb(250, 244, 244);
             font-size: 35px;
             padding: 15px;
@@ -50,7 +50,7 @@
         }
 
         .form-control {
-            background-color: #1c1c1c;
+            background-color: black;
             color: white;
             border: 1px solid white;
         }
@@ -109,7 +109,7 @@
     <ul class="navbar-center">
         <li><a href="/">Home</a></li>
         <li><a href="/recommend">Recommend</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="/contact">Contact</a></li>
     </ul>
 </nav>
 
@@ -122,6 +122,23 @@
                 <input name="user_input" type="text" class="form-control" placeholder="Enter a book you like...(Case Sensetive)"><br>
                 <input type="submit" class="btn btn-lg btn-warning" value="Recommend">
             </form>
+            {% if not_found %}
+    <div class="alert alert-danger" style="margin-top: 20px;">
+        Book not found. Please try another title.
+    </div>
+{% endif %}
+
+            {% if suggestions %}
+    <div style="margin-top: 30px;">
+        <h4 class="text-white">Try one of these:</h4>
+        <ul>
+            {% for title in suggestions %}
+                <li class="text-white">{{ title }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+
         </div>
 
         {% if data %}
